@@ -17,4 +17,6 @@ class JobRequiredSkillsAdmin(admin.ModelAdmin):
 
 admin.site.register(Jobs,JobRequiredSkillsAdmin)
 admin.site.register(JobEducation_Experience)
-admin.site.register(JobRequiredSkills)
+admin.site.register(JobRequiredSkills)  
+
+
