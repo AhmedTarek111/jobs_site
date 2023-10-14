@@ -19,10 +19,10 @@ class Jobs(models.Model):
     posted_date =models.DateTimeField(default=timezone.now )
     vacancy  =models.IntegerField() 
     application_date = models.DateTimeField(default=timezone.now)
-    skills = models.ForeignKey('JobRequiredSkills',on_delete=models.SET_NULL, null=True,blank=True)
-    education = models.ForeignKey('JobEducation_Experience',on_delete=models.SET_NULL, null=True,blank=True)
+
 class JobRequiredSkills(models.Model):
     skills = models.CharField(max_length=200)
-
+    job=models.ForeignKey(Jobs,on_delete=models.CASCADE,related_name='JobRequiredSkills')
 class JobEducation_Experience(models.Model):
     skills = models.CharField(max_length=200)
+    job=models.ForeignKey(Jobs,on_delete=models.CASCADE,related_name='JobEducation_Experience')
